@@ -33,14 +33,15 @@ getData();
 const getBreakingNews = (id) => {
     makeRequest(`https://openapi.programming-hero.com/api/news/category/${id}`)
         .then((res) => displayBreakingNews(res))
-        .catch((err) => displayBreakingNews(err))
+        .catch((err) => console.log(err))
 };
 const displayBreakingNews = allnews => {
     const newses = allnews.data;
     const mainContainer = document.getElementById('main-container');
     mainContainer.innerHTML = '';
+    const sarceRejult = document.getElementById('sarce-rejult').innerText;
+    console.log(mainContainer.innerHTML);
     newses.forEach(news => {
-        console.log(news);
         const maindiv = document.createElement("div");
         maindiv.classList = ('row my-5');
         maindiv.innerHTML = `
@@ -65,7 +66,7 @@ const displayBreakingNews = allnews => {
                                     </div>
                                     <div>
                                         <div>${news.author.name ? news.author.name : "No data"}</div>
-                                        <div>${news.author.published_date}</div>
+                                        <div>${news.author.published_date ? news.author.published_date : "No data"}</div>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
@@ -84,8 +85,9 @@ const displayBreakingNews = allnews => {
                                     <i class="fa-regular fa-star"></i>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">Primary <i
-                                            class="fa-solid fa-arrow-right"></i></button>
+                                    <button onclick="modalBodyById('${news._id}')" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +96,36 @@ const displayBreakingNews = allnews => {
         mainContainer.appendChild(maindiv)
 
     })
-
 }
-displayBreakingNews();
-{/* <p class="card-text">${news.details.length > 270 ? news.details.slice(270, 500) + '...' : title}</p> */ }
+
+const modalBodyById = (id) => {
+    makeRequest(`https://openapi.programming-hero.com/api/news/${id}`)
+        .then((res) => displaymodalBodyById(res))
+        .catch((err) => console.log(err))
+};
+const displaymodalBodyById = (modals) => {
+    const modal = modals.data[0];
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = `
+                        <div class="card">
+                            <img src="${modal.thumbnail_url ? modal.thumbnail_url : "https://i.ibb.co/g9CSkZQ/image.png "}" class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${modal.title}</h5>
+                                <div class="d-flex align-items-center justify-content-between my-5">
+                                    <h6>author Name : ${modal.author.name ? modal.author.name : "No data"}</h6>
+                                    <h6>${modal.author.published_date ? modal.author.published_date : "No data"}</h6>
+                                </div>
+                                <p class="card-text">${modal.details ? modal.details : "NO details"}</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="h5">
+                                        view : ${modal.rating.badge ? modal.rating.badge : "NO details"}
+                                    </div>
+                                    <div class="ms-2">
+                                        <h5> rating : ${modal.rating.number ? modal.rating.number : "NO details"}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    `;
+}
