@@ -98,10 +98,6 @@ const displayBreakingNews = allnews => {
     })
 }
 
-
-
-
-
 const homePage = () => {
     fetch('https://openapi.programming-hero.com/api/news/category/01')
         .then(res => res.json())
@@ -171,24 +167,6 @@ const newsDisplay = (allnews) => {
         mainContainer.appendChild(maindiv)
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

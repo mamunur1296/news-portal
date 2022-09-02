@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bd-news || 24-hours-in-bangladesh-by-bangla</title>
+    <!-- bootstrap link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- fontawesome  -->
+    <script src="https://kit.fontawesome.com/bea935fd55.js" crossorigin="anonymous"></script>
+    <!-- just one inline css  -->
+    <style>
+        .my-img {
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header section start now  -->
+    <header class="container">
+        <!-- nave bar start now  -->
+        <nav class="navbar navbar-expand-lg p-4 border-bottom  border-success bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">bd-news</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search News" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- nave bar end now  -->
+    </header>
+    <!-- main section start  -->
+    <main class="container mt-5">
+        <section class="my-5">
+            <h2> Q.No : 1 - how to deferent var let constant ?</h2>
+            <p class="p-4"> Ans : Just like let, const declarations are hoisted to the top but are not initialized.
+
+                So just in case you missed the differences, here they are:
+
+                var declarations are globally scoped or function scoped while let and const are block scoped.
+                var variables can be updated and re-declared within its scope; let variables can be updated but not
+                re-declared; const
+                variables can neither be updated nor re-declared.
+                They are all hoisted to the top of their scope. But while var variables are initialized with undefined,
+                let and const
+                variables are not initialized.
+                While var and let can be declared without being initialized, const must be initialized during
+                declaration.</p>
+        </section>
+        <section class="my-5">
+            <h2> Q.No : 2 - how to different arrow and regular function ?</h2>
+            <p class="p-4"> Ans : The first and most obvious difference between arrow functions and regular functions is
+                their syntax. Not only do they
+                look different, but arrow functions also provide an implicit return shorthand and allow parenthesis
+                around a single
+                argument to be omitted.
+                <br>
+                Once I started learning JavaScript I realized that functions
+                are bread and
+                butter of JavaScript programming language.
+                Alongside classic function declarations there are arrow functions in JS (introduced in ES6). Arrow
+                functions might be
+                confusing in the beginning. In fact, arrow functions are great! They do look nicer, they do take less
+                keystrokes, they
+                are more fun, and they are so handy in React. Let’s take a closer look at their syntax and other
+                differences compare to
+                regular functions. <br>Instead of the function keyword, arrow function uses an arrow (=>) made up of an
+                equal sign and a greater-than character
+                (not to be confused with the greater-than-or-equal operator, which is written >=).
+
+                // ES5 Regular function
+                let add = function(a, b) {
+                return a + b;
+                };
+                // ES6 Arrow function
+                let add = (a, b) => { return a + b };
+                It is important to note that arrow functions, introduced in ES6 in 2015, are anonymous, which means that
+                they are not
+                named. The example above shows the anonymous arrow function with two arguments a and b that returns a +
+                b.
+
+                Arrow functions may appear unfamiliar and not very readable at first, but that quickly changes as the
+                eyes get used to
+                the structure.
+
+                They are very convenient for simple one-line actions, when we’re just too lazy to write many words.
+            </p>
+        </section>
+        <section class="my-5">
+            <h2> Q.No : 3 - how to different map, foreach, filter, find in javascript ?</h2>
+            <p class="p-4"> Ans : Filter a Map in JavaScript # Use the forEach () method to filter a Map in JavaScript.
+                The method gets called with each
+                key-value pair in the Map, where we can check for a condition and use the delete () method to delete any
+                of the Map
+                elements we want to filter out.
+                <br>
+
+            </p>
+        </section>
+        <section class="my-5">
+            <h2> Q.No : 1 - how to use template string in java ?</h2>
+            <p class="p-4"> Ans :
+                The simpliest way to have a string template in java is by using the Apache Commons Lang library which
+                you already have
+                as a dependency already. Get library Resolve the dependency through maven by defining it in your
+                pom.xml.<br> To use the string template approach from Apache Commons Lang library, you first define your
+                data with a Map. Then, you
+                develop your template via a simple string or load it from a file. The template format is very similar to
+                Kotlin String
+                Templates, Velocity or Freemarker. The values are defined with the syntax.</p>
+        </section>
+
+    </main>
+    <!-- main section start  -->
+    <!-- footer section start now  -->
+    <footer class="container mt-0">
+        <h2 class="text-center my-5">Copyright © 2022 bd-news24.com</h2>
+    </footer>
+    <!-- footer section start now  -->
+    <!-- bootstrap script link  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- My script link  -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
