@@ -39,7 +39,8 @@ const displayBreakingNews = allnews => {
     const newses = allnews.data;
     const mainContainer = document.getElementById('main-container');
     mainContainer.innerHTML = '';
-    const sarceRejult = document.getElementById('sarce-rejult').innerText;
+    const sarceRejult = document.getElementById('sarce-rejult').innerText = newses.length;
+    console.log(sarceRejult);
     console.log(mainContainer.innerHTML);
     newses.forEach(news => {
         const maindiv = document.createElement("div");
@@ -94,7 +95,6 @@ const displayBreakingNews = allnews => {
                     </div>
         `;
         mainContainer.appendChild(maindiv)
-
     })
 }
 
