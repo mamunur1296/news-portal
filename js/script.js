@@ -16,7 +16,6 @@ const getData = () => {
 const displayData = (dataa) => {
     const newses = dataa.data.news_category;
     const setCatagory = document.getElementById('set-catagory');
-    console.log(newses.length);
     const categoryNamees = [];
     newses.forEach(news => {
         if (categoryNamees.indexOf(news.category_name) === -1) {
@@ -31,17 +30,25 @@ const displayData = (dataa) => {
 }
 getData();
 const getBreakingNews = (id) => {
+    lodeSpener(true);
     makeRequest(`https://openapi.programming-hero.com/api/news/category/${id}`)
         .then((res) => displayBreakingNews(res))
         .catch((err) => console.log(err))
 };
 const displayBreakingNews = allnews => {
     const newses = allnews.data;
+    newses.sort(function (a, b) {
+        return b.total_view - a.total_view;
+    });
     const mainContainer = document.getElementById('main-container');
     mainContainer.innerHTML = '';
     const sarceRejult = document.getElementById('sarce-rejult').innerText = newses.length;
-    console.log(sarceRejult);
-    console.log(mainContainer.innerHTML);
+    const noDataFound = document.getElementById('no-data-found');
+    if (sarceRejult === 0) {
+        noDataFound.classList.remove('d-none');
+    } else {
+        noDataFound.classList.add('d-none');
+    }
     newses.forEach(news => {
         const maindiv = document.createElement("div");
         maindiv.classList = ('row my-5');
@@ -96,6 +103,7 @@ const displayBreakingNews = allnews => {
         `;
         mainContainer.appendChild(maindiv)
     })
+    lodeSpener(false);
 }
 
 const homePage = () => {
@@ -107,11 +115,12 @@ homePage();
 
 const newsDisplay = (allnews) => {
     const newses = allnews.data;
+    newses.sort(function (a, b) {
+        return b.total_view - a.total_view;
+    });
     const mainContainer = document.getElementById('main-container');
     mainContainer.innerHTML = '';
     const sarceRejult = document.getElementById('sarce-rejult').innerText = newses.length;
-    console.log(sarceRejult);
-    console.log(mainContainer.innerHTML);
     newses.forEach(news => {
         const maindiv = document.createElement("div");
         maindiv.classList = ('row my-5');
@@ -201,3 +210,19 @@ const displaymodalBodyById = (modals) => {
                         </div>
     `;
 }
+const lodeSpener = (isloding) => {
+    const sectionSpeaner = document.getElementById("spener");
+    if (isloding) {
+        sectionSpeaner.classList.remove('d-none');
+    }
+    else {
+        sectionSpeaner.classList.add('d-none');
+    }
+}
+
+
+
+
+
+
+
