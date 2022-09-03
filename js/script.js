@@ -91,14 +91,11 @@ const displayBreakingNews = allnews => {
                                 </div>
                                 <div>
                                     <i class="fa-solid fa-star-half-stroke"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
+                                    <span>${news.rating.number ? news.rating.number : "NO details"}</span>
                                 </div>
                                 <div>
-                                    <button onclick="modalBodyById('${news._id}')" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="fa-solid fa-arrow-right"></i>
+                                    <button onclick="modalBodyById('${news._id}')" type="button" class="btn text-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        NEWS
                                     </button>
                                 </div>
                             </div>
