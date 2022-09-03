@@ -136,7 +136,7 @@ const displaymodalBodyById = (modals) => {
                                 <p class="card-text">${modal.details ? modal.details : "NO details"}</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="h5">
-                                        view : ${modal.rating.badge ? modal.rating.badge : "NO details"}
+                                        view : <span>${modal.total_view ? modal.total_view : "No data"}</span>
                                     </div>
                                     <div class="ms-2">
                                         <h5> rating : ${modal.rating.number ? modal.rating.number : "NO details"}</h5>
