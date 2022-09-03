@@ -1,0 +1,9 @@
+     .my-img {
+         height: 100%;
+         object-fit: cover;
+     }
+
+     .nodata {
+         margin-top: 200px;
+         margin-bottom: 200px;
+     }
