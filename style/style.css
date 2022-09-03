@@ -1,9 +1,13 @@
+     /* image stylw  */
      .my-img {
          height: 100%;
          object-fit: cover;
      }
 
+     /* no data option  */
      .nodata {
          margin-top: 200px;
          margin-bottom: 200px;
      }
+
+     /* css page complited  */

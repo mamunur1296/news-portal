@@ -1,3 +1,4 @@
+// url fetch common  function 
 const makeRequest = async (url) => {
     const res = await fetch(url);
     if (!res.ok) {
@@ -7,12 +8,13 @@ const makeRequest = async (url) => {
     const data = await res.json();
     return data;
 }
+// All News Category function
 const getData = () => {
     makeRequest(`https://openapi.programming-hero.com/api/news/categories`)
         .then((res) => displayData(res))
         .catch((err) => console.log(err))
 };
-
+// display All News Category
 const displayData = (dataa) => {
     const newses = dataa.data.news_category;
     const setCatagory = document.getElementById('set-catagory');
@@ -28,6 +30,7 @@ const displayData = (dataa) => {
         }
     });
 }
+// all post function 
 getData();
 const getBreakingNews = (id) => {
     lodeSpener(true);
@@ -35,6 +38,7 @@ const getBreakingNews = (id) => {
         .then((res) => displayBreakingNews(res))
         .catch((err) => console.log(err))
 };
+// display all post function 
 const displayBreakingNews = allnews => {
     const newses = allnews.data;
     newses.sort(function (a, b) {
@@ -105,20 +109,20 @@ const displayBreakingNews = allnews => {
     })
     lodeSpener(false);
 }
-
+// regular post loded function hard coded link  
 const homePage = () => {
     fetch('https://openapi.programming-hero.com/api/news/category/01')
         .then(res => res.json())
         .then(data => displayBreakingNews(data))
 }
 homePage();
-
-
+// modal id create function
 const modalBodyById = (id) => {
     makeRequest(`https://openapi.programming-hero.com/api/news/${id}`)
         .then((res) => displaymodalBodyById(res))
         .catch((err) => console.log(err))
 };
+// display modal item 
 const displaymodalBodyById = (modals) => {
     const modal = modals.data[0];
     const modalBody = document.getElementById('modal-body');
@@ -145,6 +149,7 @@ const displaymodalBodyById = (modals) => {
                         </div>
     `;
 }
+// spener function true or false 
 const lodeSpener = (isloding) => {
     const sectionSpeaner = document.getElementById("spener");
     if (isloding) {
@@ -154,10 +159,4 @@ const lodeSpener = (isloding) => {
         sectionSpeaner.classList.add('d-none');
     }
 }
-
-
-
-
-
-
-
+// script page completed 
